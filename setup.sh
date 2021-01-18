@@ -21,11 +21,11 @@ dpkg-reconfigure -f noninteractive tzdata
 
 echo -e "\n\n\n\nCreating /etc/profile.d/mxve_bash.sh\n\n\n\n"
 sleep 3
-curl -fsSL https://raw.githubusercontent.com/mxve/debian-setup/main/bash.sh > /etc/profile.d/mxve_bash.sh
+curl -fsSL https://raw.githubusercontent.com/mxve/debian-setup/main/profile.d/mxve_bash.sh > /etc/profile.d/mxve_bash.sh
 chmod +x /etc/profile.d/mxve_bash.sh
 
 echo -e "\n\n\n\nReplacing sshd_config\n\n\n\n"
 sleep 10
 # bippity boppity ssh key mandatory
-curl -fsSL https://raw.githubusercontent.com/mxve/debian-setup/main/sshd_config > /etc/ssh/sshd_config
+curl -fsSL https://raw.githubusercontent.com/mxve/debian-setup/main/ssh/sshd_config > /etc/ssh/sshd_config
 systemctl restart sshd
