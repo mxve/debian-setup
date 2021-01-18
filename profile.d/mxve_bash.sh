@@ -38,3 +38,7 @@ alias gp="ps ax | grep"
 ## create parent directories
 ## print every directory
 alias mkdir="mkdir -pv"
+
+# logs
+## docker logs
+alias logs="docker logs -f"
