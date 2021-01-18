@@ -1,0 +1,41 @@
+# SSH CONFIG; REFERENCE CONFIG https://github.com/ITNerdbox/OS-Hardening/blob/master/sshd_config
+# key login only, root is allowed to login
+
+Port 22
+AddressFamily inet
+ListenAddress 0.0.0.0
+
+KexAlgorithms curve25519-sha256@libssh.org,diffie-hellman-group16-sha512,diffie-hellman-group18-sha512,diffie-hellman-group14-sha256
+Ciphers chacha20-poly1305@openssh.com,aes256-gcm@openssh.com,aes128-gcm@openssh.com,aes256-ctr,aes192-ctr,aes128-ctr
+MACs hmac-sha2-512-etm@openssh.com,hmac-sha2-256-etm@openssh.com,umac-128-etm@openssh.com
+
+SyslogFacility AUTH
+LogLevel VERBOSE
+
+LoginGraceTime 30s
+PermitRootLogin without-password
+StrictModes yes
+MaxAuthTries 3
+MaxSessions 5
+
+PasswordAuthentication no
+PubkeyAuthentication yes
+
+HostbasedAuthentication no
+IgnoreRhosts yes
+PermitEmptyPasswords no
+ChallengeResponseAuthentication no
+
+UsePAM yes
+
+AllowAgentForwarding no
+AllowTcpForwarding no
+GatewayPorts no
+X11Forwarding no
+PermitTTY yes
+PrintMotd no
+PrintLastLog no
+UsePrivilegeSeparation sandbox
+PermitUserEnvironment no
+
+Subsystem	sftp	/usr/lib/openssh/sftp-server
