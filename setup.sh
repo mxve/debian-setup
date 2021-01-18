@@ -20,11 +20,12 @@ apt-get update
 apt-get install -y docker-ce docker-ce-cli containerd.io
 
 echo -e "\n\n\n\nInstalling rust-mdr\n\n\n\n"
-mkdir -pv /opt/bin/rust-mdr
-cd /opt/bin/rust-mdr
+sleep 3
+mkdir -pv /opt/bin
+cd /opt/bin
 curl -LJO https://github.com/mxve/rust-mdr/releases/download/v0.1.0-release/rust-mdr
 chmod +x rust-mdr
-ln -s /opt/bin/rust-mdr/rust-mdr /usr/bin/mdr
+ln -s /opt/bin/rust-mdr /usr/bin/mdr
 
 echo -e "\n\n\n\nSetting timezone Europe/Berlin\n\n\n\n"
 sleep 3
