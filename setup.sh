@@ -4,7 +4,6 @@ apt-get update
 apt-get upgrade -y
 apt-get install -y build-essential htop nload screen nano debian-goodies unzip zip curl wget git fail2ban rsync
 
-# docker
 echo -e "\n\n\n\nInstalling docker\n\n\n\n"
 sleep 5
 apt-get remove -y docker docker-engine docker.io containerd runc
@@ -13,7 +12,6 @@ curl -fsSL https://download.docker.com/linux/debian/gpg | apt-key add -
 add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/debian $(lsb_release -cs) stable"
 apt-get update
 apt-get install -y docker-ce docker-ce-cli containerd.io
-
 
 echo -e "\n\n\n\nSetting timezone Europe/Berlin\n\n\n\n"
 sleep 5
