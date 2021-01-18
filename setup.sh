@@ -12,7 +12,7 @@ curl https://sh.rustup.rs -sSf | sh -s -- --quiet -y
 
 echo -e "\n\n\n\nInstalling docker\n\n\n\n"
 sleep 3
-apt-get remove -y docker docker-engine docker.io containerd runc
+apt-get remove -y docker docker-engine docker.io containerd runc docker-compose
 apt-get install -y apt-transport-https ca-certificates gnupg-agent software-properties-common
 curl -fsSL https://download.docker.com/linux/debian/gpg | apt-key add -
 add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/debian $(lsb_release -cs) stable"
