@@ -1,3 +1,5 @@
+#!/bin/bash
+
 echo -e "\n\n\n\nUpdating & installing basic tools\n\n\n\n"
 sleep 3
 apt-get update
@@ -29,3 +31,5 @@ sleep 10
 # bippity boppity ssh key mandatory
 curl -fsSL https://raw.githubusercontent.com/mxve/debian-setup/main/ssh/sshd_config > /etc/ssh/sshd_config
 systemctl restart sshd
+
+echo -e "\n\n\n\nDone, check ssh functionality before closing session\n\n\n\n"
