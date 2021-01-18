@@ -6,6 +6,10 @@ apt-get update
 apt-get upgrade -y
 apt-get install -y build-essential htop nload screen nano debian-goodies unzip zip curl wget git fail2ban rsync
 
+echo -e "\n\n\n\nInstalling rust\n\n\n\n"
+sleep 3
+curl https://sh.rustup.rs -sSf | sh -s -- --quiet -y
+
 echo -e "\n\n\n\nInstalling docker\n\n\n\n"
 sleep 3
 apt-get remove -y docker docker-engine docker.io containerd runc
