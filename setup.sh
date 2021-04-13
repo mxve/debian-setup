@@ -9,6 +9,7 @@ apt-get install -y build-essential htop nload screen nano debian-goodies unzip z
 echo -e "\n\n\n\nInstalling rust\n\n\n\n"
 sleep 3
 curl https://sh.rustup.rs -sSf | sh -s -- --quiet -y
+source $HOME/.cargo/env
 
 echo -e "\n\n\n\nInstalling docker\n\n\n\n"
 sleep 3
