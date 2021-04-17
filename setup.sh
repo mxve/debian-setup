@@ -28,6 +28,12 @@ curl -LJO https://github.com/mxve/rust-mdr/releases/download/v0.1.0-release/rust
 chmod +x rust-mdr
 ln -s /opt/bin/rust-mdr /usr/bin/mdr
 
+echo -e "\n\n\n\nSetting up doc.md\n\n\n\n"
+sleep 3
+curl -fsSL https://raw.githubusercontent.com/mxve/debian-setup/main/bin/doc > /usr/local/bin/doc
+chmod +x /usr/local/bin/doc
+touch /root/doc.md
+
 echo -e "\n\n\n\nSetting timezone Europe/Berlin\n\n\n\n"
 sleep 3
 echo "Europe/Berlin" > /etc/timezone
