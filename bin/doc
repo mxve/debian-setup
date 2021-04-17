@@ -1,0 +1,2 @@
+#!/bin/bash
+mdr -f /root/doc.md
