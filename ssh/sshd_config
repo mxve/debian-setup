@@ -33,7 +33,7 @@ AllowTcpForwarding no
 GatewayPorts no
 X11Forwarding no
 PermitTTY yes
-PrintMotd yes
+PrintMotd no
 PrintLastLog no
 PermitUserEnvironment no
 
