@@ -35,7 +35,6 @@ X11Forwarding no
 PermitTTY yes
 PrintMotd no
 PrintLastLog no
-UsePrivilegeSeparation sandbox
 PermitUserEnvironment no
 
 Subsystem	sftp	/usr/lib/openssh/sftp-server
