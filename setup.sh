@@ -51,7 +51,4 @@ sleep 10
 curl -fsSL https://raw.githubusercontent.com/mxve/debian-setup/main/ssh/sshd_config > /etc/ssh/sshd_config
 systemctl restart sshd
 
-echo -e "\n\n\n\nAdding logwatch cronjob\n\n\n\n"
-(crontab -l ; echo "0 0 * * * logwatch > /etc/motd") | crontab -
-
 echo -e "\n\n\n\nDone, check ssh functionality before closing session\n\n\n\n"
