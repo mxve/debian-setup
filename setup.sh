@@ -4,7 +4,7 @@ echo -e "\n\n\n\nUpdating & installing basic tools\n\n\n\n"
 sleep 3
 apt-get update
 apt-get upgrade -y
-apt-get install -y build-essential htop nload screen nano debian-goodies unzip zip curl wget git fail2ban rsync python3 python3-pip python3-setuptools cifs-utils logwatch
+apt-get install -y build-essential goaccess htop nload screen nano debian-goodies unzip zip curl wget git fail2ban rsync python3 python3-pip python3-setuptools cifs-utils logwatch
 
 echo -e "\n\n\n\nInstalling rust\n\n\n\n"
 sleep 3
