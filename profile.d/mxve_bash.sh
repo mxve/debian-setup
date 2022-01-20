@@ -8,6 +8,7 @@
 
 alias nano="nano -kS --softwrap"
 alias ee="nano"
+alias goaccess="goaccess --ignore-crawlers"
 
 # ls
 ## Enable colors
