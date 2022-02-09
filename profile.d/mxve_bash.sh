@@ -43,9 +43,3 @@ alias mkdir="mkdir -pv"
 # logs
 ## docker logs
 alias logs="docker logs -f"
-
-# md
-## mdr file + less
-md() {
-  mdr -f ${@:1} | less -r
-}
