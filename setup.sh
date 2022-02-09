@@ -6,11 +6,6 @@ apt-get update
 apt-get upgrade -y
 apt-get install -y build-essential goaccess htop nload screen nano debian-goodies unzip zip curl wget git fail2ban rsync python3 python3-pip python3-setuptools cifs-utils logwatch
 
-echo -e "\n\n\n\nInstalling rust\n\n\n\n"
-sleep 3
-curl https://sh.rustup.rs -sSf | sh -s -- --quiet -y
-source $HOME/.cargo/env
-
 echo -e "\n\n\n\nInstalling docker\n\n\n\n"
 sleep 3
 apt-get remove -y docker docker-engine docker.io containerd runc docker-compose
@@ -19,20 +14,6 @@ curl -fsSL https://download.docker.com/linux/debian/gpg | apt-key add -
 add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/debian $(lsb_release -cs) stable"
 apt-get update
 apt-get install -y docker-ce docker-ce-cli containerd.io docker-compose
-
-echo -e "\n\n\n\nInstalling rust-mdr\n\n\n\n"
-sleep 3
-mkdir -pv /opt/bin
-cd /opt/bin
-curl -LJO https://github.com/mxve/rust-mdr/releases/download/v0.1.0-release/rust-mdr
-chmod +x rust-mdr
-ln -s /opt/bin/rust-mdr /usr/bin/mdr
-
-echo -e "\n\n\n\nSetting up doc.md\n\n\n\n"
-sleep 3
-curl -fsSL https://raw.githubusercontent.com/mxve/debian-setup/main/bin/doc > /usr/local/bin/doc
-chmod +x /usr/local/bin/doc
-touch /root/doc.md
 
 echo -e "\n\n\n\nSetting timezone Europe/Berlin\n\n\n\n"
 sleep 3
