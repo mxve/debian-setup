@@ -29,7 +29,7 @@ ChallengeResponseAuthentication no
 UsePAM yes
 
 AllowAgentForwarding no
-AllowTcpForwarding no
+AllowTcpForwarding yes
 GatewayPorts no
 X11Forwarding no
 PermitTTY yes
