@@ -4,7 +4,13 @@ echo "Updating & installing basic tools"
 sleep 3
 apt-get update
 apt-get upgrade -y
-apt-get install -y gnupg build-essential goaccess sudo htop nload screen nano debian-goodies unzip zip curl wget git fail2ban rsync python3 python3-pip python3-setuptools cifs-utils logwatch
+apt-get install -y gnupg build-essential sudo htop nload screen nano debian-goodies unzip zip curl wget git fail2ban rsync python3 python3-pip python3-setuptools cifs-utils logwatch
+
+echo "Installing goaccess"
+wget -O - https://deb.goaccess.io/gnugpg.key | gpg --dearmor | sudo tee /usr/share/keyrings/goaccess.gpg >/dev/null
+echo "deb [signed-by=/usr/share/keyrings/goaccess.gpg] https://deb.goaccess.io/ $(lsb_release -cs) main" | sudo tee /etc/apt/sources.list.d/goaccess.list
+apt-get update
+apt-get install goaccess -y
 
 echo "Installing docker"
 sleep 3
