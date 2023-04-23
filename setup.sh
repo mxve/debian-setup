@@ -13,9 +13,12 @@ systemctl restart sshd
 
 echo "" > /etc/motd
 
-echo "Europe/Berlin" > /etc/timezone
-unlink /etc/localtime
-dpkg-reconfigure -f noninteractive tzdata
+CUR_TIMEZONE=$(cat /etc/timezone)
+if [ "$CUR_TIMEZONE" != "Europe/Berlin" ]; then
+    echo "Europe/Berlin" > /etc/timezone
+    unlink /etc/localtime
+    dpkg-reconfigure -f noninteractive tzdata
+fi
 
 if [ ! -f ~/.ssh/id_rsa ]; then
     ssh-keygen -t rsa -b 4096
