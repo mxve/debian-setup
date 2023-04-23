@@ -14,6 +14,8 @@ curl -fsSL https://raw.githubusercontent.com/mxve/debian-setup/main/sshd_config 
 curl -fsSL https://raw.githubusercontent.com/mxve/debian-setup/main/issue.net > /etc/issue.net
 systemctl restart sshd
 
+echo "" > /etc/motd
+
 echo "Europe/Berlin" > /etc/timezone
 unlink /etc/localtime
 dpkg-reconfigure -f noninteractive tzdata
