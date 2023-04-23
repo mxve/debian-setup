@@ -17,4 +17,6 @@ echo "Europe/Berlin" > /etc/timezone
 unlink /etc/localtime
 dpkg-reconfigure -f noninteractive tzdata
 
-ssh-keygen -t rsa -b 4096
+if [ ! -f ~/.ssh/id_rsa ]; then
+    ssh-keygen -t rsa -b 4096
+fi
