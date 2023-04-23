@@ -12,10 +12,7 @@ if [ -z "${debian_chroot:-}" ] && [ -r /etc/debian_chroot ]; then
     debian_chroot=$(cat /etc/debian_chroot)
 fi
 
-case "$TERM" in
-    xterm-color|*-256color) color_prompt=yes;;
-esac
-
+# colored ls
 LS_COLORS=$LS_COLORS:'fi=0;95:ex=1;95:di=0;94:ln=0;96:mi=0;91:or=0;91'
 export LS_COLORS
 
@@ -27,16 +24,16 @@ fi
 # colored GCC warnings and errors
 export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
 
-if [ -f ~/.bash_aliases ]; then
-    . ~/.bash_aliases
-fi
-
 if ! shopt -oq posix; then
   if [ -f /usr/share/bash-completion/bash_completion ]; then
     . /usr/share/bash-completion/bash_completion
   elif [ -f /etc/bash_completion ]; then
     . /etc/bash_completion
   fi
+fi
+
+if [ -f "~/.cargo/env" ]; then
+    source ~/.cargo/env
 fi
 
 PS1="\[\033[38;5;99m\](\[$(tput sgr0)\]\[\033[38;5;177m\]\h\[$(tput sgr0)\] \[$(tput sgr0)\]\[\033[38;5;171m\]\u\[$(tput sgr0)\]\[\033[38;5;99m\])\[$(tput sgr0)\] \[$(tput sgr0)\]\[\033[38;5;99m\]\w\[$(tput sgr0)\] \[$(tput sgr0)\]\[\033[38;5;99m\]>\[$(tput sgr0)\] \[$(tput sgr0)\]"
