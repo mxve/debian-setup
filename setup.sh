@@ -21,5 +21,5 @@ if [ "$CUR_TIMEZONE" != "Europe/Berlin" ]; then
 fi
 
 if [ ! -f ~/.ssh/id_rsa ]; then
-    ssh-keygen -t rsa -b 4096
+    ssh-keygen -t rsa -b 4096 -f ~/.ssh/id_rsa -q -N ""
 fi
