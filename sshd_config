@@ -1,5 +1,4 @@
 # SSH CONFIG; REFERENCE CONFIG https://github.com/ITNerdbox/OS-Hardening/blob/master/sshd_config
-# key login only, root is allowed to login
 
 Port 22
 AddressFamily inet
@@ -17,9 +16,11 @@ PermitRootLogin without-password
 StrictModes yes
 MaxAuthTries 3
 MaxSessions 5
+ClientAliveCountMax 2
 
 PasswordAuthentication no
 PubkeyAuthentication yes
+AuthenticationMethods publickey
 
 HostbasedAuthentication no
 IgnoreRhosts yes
@@ -29,12 +30,17 @@ ChallengeResponseAuthentication no
 UsePAM yes
 
 AllowAgentForwarding no
+# AllowTcpForwarding for VSCode Remote - SSH
 AllowTcpForwarding yes
+AllowStreamLocalForwarding no
 GatewayPorts no
 X11Forwarding no
 PermitTTY yes
 PrintMotd no
 PrintLastLog no
 PermitUserEnvironment no
+
+Banner /etc/issue.net
+DebianBanner no
 
 Subsystem	sftp	/usr/lib/openssh/sftp-server
