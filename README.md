@@ -3,7 +3,7 @@
 
 ### install stuff
 - update/upgrade
-- install gnupg, build-essential, sudo, htop, nload, screen, nano, debian-goodies, unzip, zip, curl, wget, git, fail2ban, rsync, cifs-utils, ufw
+- install gnupg, build-essential, sudo, htop, nload, screen, nano, debian-goodies, unzip, zip, curl, git, fail2ban, rsync, cifs-utils, ufw
 
 ### download configs
 - [.bashrc](.bashrc) to ```/etc/skel/.bashrc```, ```~/.bashrc```
